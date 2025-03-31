@@ -101,6 +101,8 @@ const App = () => {
     </Router>
   );
 };
+// const apiUrl = import.meta.env.base;
+// console.log("API URL:", apiUrl);
 
 export default App;
 

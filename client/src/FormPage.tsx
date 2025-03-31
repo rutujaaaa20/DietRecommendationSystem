@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { base } from "./base";
 interface FormDataType {
   dietary_preferences: string;
   fitness_goals: string;
@@ -28,7 +29,7 @@ export const FormPage: FC<{ onSubmit: (data: any) => void }> = ({ onSubmit }) =>
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://dietrecommendationsystem.onrender.com/api/recommendations", {
+      const response = await fetch(`${base}/recommendations`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
